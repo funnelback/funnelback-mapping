@@ -2,12 +2,12 @@
 
 Purpose: add GeoJSON map data to a LeafletJS map
 Author: Peter Levan, 2014
-Version: 0.8
 
 Updated: 11 Feb 2015 - add support for custom pins and addition of the customiseMap() function.
 Updated: 24 Feb 2015 - add option to enable/disable pin clustering.
 Updated: 25 Feb 2015 - add loading icons.
 Updated: 2 Mar 2015 - add fullscreen control.
+Updated: 16 Oct 2015 - add ability to customise popup
 */
 
 // Create the map origin - The values of ori_x and ori_y are defined in funnelback_mapping_config.js
@@ -78,7 +78,7 @@ function funnelback_map(jsondataurl) {
 function pointToLayer(feature, latlng) {
     var pin = new L.marker(latlng, markerOptions(feature));
     var popupContent = createPopup(feature);
-    pin.bindPopup(popupContent);
+    pin.bindPopup(popupContent, popupOptions(feature));
     return pin;
 }
 

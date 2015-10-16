@@ -5,8 +5,8 @@
 <#compress>
 <#-- geojson.ftl
 Outputs Funnelback response in GeoJSON format.
-Version: 0.5
-Date: Feb 2015
+Date: 16 Oct 2015
+
 Author: Gordon Grace (Jun 2013), modifications by Peter Levan
 See also:
 http://www.geojson.org/geojson-spec.html
@@ -39,7 +39,7 @@ ToDo:
         "features": [
     <@s.Results>
         <#if s.result.class.simpleName != "TierBar">
-          <#if s.result.metaData["x"]??> <#-- has geo-coord - update to the meta class containing the geospatial coordinate -->
+          <#if s.result.metaData["x"]?? && s.result.metaData["x"]?matches("-?\\d+\\.\\d+;-?\\d+\\.\\d+")> <#-- has geo-coord and it's formatted correctly - update to the meta class containing the geospatial coordinate -->
             <#-- EACH RESULT -->
             {
                 "type": "Feature",

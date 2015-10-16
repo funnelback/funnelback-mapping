@@ -2,10 +2,10 @@
 
 Purpose: User customisations for the the funnelback_mapping.js code
 Author: Peter Levan, 2014
-Version: 0.4
 
 Updated: 11 Feb 2015 - add support for custom pins and addition of the customiseMap() function.
 Updated: 24 Feb 2015 - add option to enable/disable pin clustering.
+Updated: 16 Oct 2015 - add ability to customise popup
 */
 
 //PL TODO - auto detect origin if set?????
@@ -73,6 +73,17 @@ function markerOptions(feature) {
     icon: iconImg
   }
   return mOpts;
+
+}
+
+// Configure options for markup popups
+function popupOptions(feature) {
+
+  var pOpts = {
+    //eg. set a max height for the popup
+	maxHeight: 450
+  }
+  return pOpts;
 
 }
 

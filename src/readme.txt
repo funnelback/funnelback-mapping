@@ -25,3 +25,7 @@ SpinJS - Javascript spinner
 spin.js
 spin.min.js
 http://fgnass.github.io/spin.js/
+
+Leaflet.Sleep - deactivates the map so that it doesn't zoom when you scroll a page containing the map
+Leaflet.Sleep.js
+https://github.com/CliffCloud/Leaflet.Sleep

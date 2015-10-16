@@ -26,6 +26,9 @@
 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
+<!-- Javascript to prevent unwanted map scrolling -->
+<script src="/s/resources/${question.inputParameterMap["collection"]}/mapservice/Leaflet.Sleep.js"></script>
+
 <!-- Javascript and CSS required for the Marker Clusters -->
 <link rel="stylesheet" href="/s/resources/${question.inputParameterMap["collection"]}/mapservice/MarkerCluster.css" />
 <link rel="stylesheet" href="/s/resources/${question.inputParameterMap["collection"]}/mapservice/MarkerCluster.Default.css" />
