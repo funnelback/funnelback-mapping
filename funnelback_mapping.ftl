@@ -23,8 +23,8 @@
 </style>
 
 <!-- Javascript required for maps -->
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<link rel="stylesheet" href="/s/resources/${question.inputParameterMap["collection"]}/mapservice/leaflet.css" />
+<script src="/s/resources/${question.inputParameterMap["collection"]}/mapservice/leaflet.js"></script>
 
 <!-- Javascript to prevent unwanted map scrolling -->
 <script src="/s/resources/${question.inputParameterMap["collection"]}/mapservice/Leaflet.Sleep.js"></script>

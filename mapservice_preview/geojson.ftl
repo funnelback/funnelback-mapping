@@ -5,8 +5,8 @@
 <#compress>
 <#-- geojson.ftl
 Outputs Funnelback response in GeoJSON format.
-Version: 0.5
-Date: Feb 2015
+Date: 16 Oct 2015
+
 Author: Gordon Grace (Jun 2013), modifications by Peter Levan
 See also:
 http://www.geojson.org/geojson-spec.html
@@ -29,6 +29,7 @@ The following should be considered:
 ToDo:
 - Handle complex geometry output
 -->
+<#assign latLong=question.collection.configuration.value("map.geospatialClass")/>
 <@s.AfterSearchOnly>
 <#-- NO RESULTS -->
 <#if question.inputParameterMap["callback"]?exists>${question.inputParameterMap["callback"]}(</#if>
@@ -39,13 +40,13 @@ ToDo:
         "features": [
     <@s.Results>
         <#if s.result.class.simpleName != "TierBar">
-          <#if s.result.metaData["x"]??> <#-- has geo-coord - update to the meta class containing the geospatial coordinate -->
+          <#if s.result.metaData[latLong]?? && s.result.metaData[latLong]?matches("-?\\d+\\.\\d+;-?\\d+\\.\\d+")> <#-- has geo-coord and it's formatted correctly - update to the meta class containing the geospatial coordinate -->
             <#-- EACH RESULT -->
             {
                 "type": "Feature",
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [${s.result.metaData["x"]?replace(".*\\;","","r")},${s.result.metaData["x"]?replace("\\;.*","","r")}] <#-- update to the meta class containing the geospatial coordinate -->
+                        "coordinates": [${s.result.metaData[latLong]?replace(".*\\;","","r")},${s.result.metaData[latLong]?replace("\\;.*","","r")}] 
                     },
                     "properties": { <#-- Fill out with all the custom metadata you wish to expose (eg for use in the map display -->
                         "rank": "${s.result.rank?string?json_string}",
