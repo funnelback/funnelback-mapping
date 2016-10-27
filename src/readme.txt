@@ -2,16 +2,14 @@ The following third party code is used for this implementation:
 
 LeafletJS
 =========
-leaflet-0.7.3.zip (http://leaflet-cdn.s3.amazonaws.com/build/leaflet-0.7.3.zip)
+leaflet.zip (Leaflet 1.0.1)
 Available online from: http://leafletjs.com/download.html
 
 LeafletJS - Leaflet.markercluster - Marker clustering plugin
-markercluster.zip (https://github.com/Leaflet/Leaflet.markercluster/archive/master.zip)
 https://github.com/Leaflet/Leaflet.markercluster
 
-LeafletJS - Plugins by Pavel Shramov - Google/Bing/Yandex tile layers
-tilelayers.zip (https://github.com/shramov/leaflet-plugins/archive/master.zip)
-https://github.com/shramov/leaflet-plugins
+Leaflet.GridLayer.GoogleMutant
+https://gitlab.com/IvanSanchez/Leaflet.GridLayer.GoogleMutant
 
 Leaflet.fullscreen - fullscreen control
 Leaflet.fullscreen-gh-pages.zip (https://github.com/Leaflet/Leaflet.fullscreen/archive/gh-pages.zip)

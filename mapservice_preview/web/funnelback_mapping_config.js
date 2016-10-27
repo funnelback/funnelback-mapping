@@ -106,9 +106,10 @@ function customiseMap() {
 // Add additional map customisation code here
   // Add aditional map tile layers (useful for the demo)
   var osm = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-  var ggl = new L.Google('HYBRID');
-  var ggl2 = new L.Google('TERRAIN');
-  var ggl3 = new L.Google('SATELLITE');
-  map.addControl(new L.Control.Layers( {'OSM':osm, 'Google (Roadmap)':tileLayer, 'Google (Hybrid)':ggl, 'Google (Terrain)':ggl2, 'Google (Satellite)':ggl3}, {}));
+  var ggl = new L.gridLayer.googleMutant({type: 'roadmap'});
+  var ggl2 = new L.gridLayer.googleMutant({type: 'terrain'});
+  var ggl3 = new L.gridLayer.googleMutant({type: 'satellite'});
+  var ggl4 = new L.gridLayer.googleMutant({type: 'hybrid'});
+  map.addControl(new L.Control.Layers( {'OSM':osm, 'Google (Roadmap)':tileLayer, 'Google (Roadmap)':ggl, 'Google (Terrain)':ggl2, 'Google (Satellite)':ggl3, 'Google (Hybrid)':ggl4}, {}));
   //--
 }

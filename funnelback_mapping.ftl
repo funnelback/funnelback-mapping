@@ -32,7 +32,7 @@
 <!-- Javascript and CSS required for the Marker Clusters -->
 <link rel="stylesheet" href="/s/resources/${question.inputParameterMap["collection"]}/mapservice/MarkerCluster.css" />
 <link rel="stylesheet" href="/s/resources/${question.inputParameterMap["collection"]}/mapservice/MarkerCluster.Default.css" />
-<script src="/s/resources/${question.inputParameterMap["collection"]}/mapservice/leaflet.markercluster.js"></script>
+<script src="/s/resources/${question.inputParameterMap["collection"]}/mapservice/leaflet.markercluster-src.js"></script>
 
 <!-- Plugin to display loading icon -->
 <script src="/s/resources/${question.inputParameterMap["collection"]}/mapservice/spin.min.js"></script>
@@ -44,8 +44,8 @@
 
 <#if tileservice == "google">
 <!-- Use Google Maps tiles -->
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-<script src="/s/resources/${question.inputParameterMap["collection"]}/mapservice/Google.js"></script>
+<script src="//maps.googleapis.com/maps/api/js?key=${question.collection.configuration.value("map.apikey.google")!""}"></script>
+<script src="/s/resources/${question.inputParameterMap["collection"]}/mapservice/Leaflet.GoogleMutant.js"></script>
 </#if>
 
 <!-- Funnelback-specific  mapping javascript -->

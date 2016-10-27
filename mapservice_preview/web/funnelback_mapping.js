@@ -8,6 +8,7 @@ Updated: 24 Feb 2015 - add option to enable/disable pin clustering.
 Updated: 25 Feb 2015 - add loading icons.
 Updated: 2 Mar 2015 - add fullscreen control.
 Updated: 16 Oct 2015 - add ability to customise popup
+Updated: 27 Oct 2016 - upgraded to Leaflet 1.x. Also upgraded to Leaflet.GoogleMutant and MarkerCluster plugin for 1.x branch
 */
 
 // Create the map origin - The values of ori_x and ori_y are defined in funnelback_mapping_config.js
@@ -33,19 +34,19 @@ switch(tileLayer) {
     break;
   case "google":
    // console.log("using Google Roadmap")
-    tileLayer = new L.Google('ROADMAP');
+    tileLayer = new L.gridLayer.googleMutant({ type: 'roadmap'  });
     break;
   case "google-hybrid":
    //console.log("using Google Hybrid")
-    tileLayer = new L.Google('HYBRID');
+    tileLayer = new L.gridLayer.googleMutant({ type: 'hybrid'  });
     break;
   case "google-satellite":
    // console.log("using Google Satellite")
-    tileLayer = new L.Google('SATELLITE');
+    tileLayer = new L.gridLayer.googleMutant({ type: 'satellite'  });
     break;
   case "google-terrain":
     //console.log("using Google Terrain")
-    tileLayer = new L.Google('TERRAIN');
+    tileLayer = new L.gridLayer.googleMutant({ type: 'terrain'  });
     break;
   default: console.log("Error: no tile layer defined")
 }
