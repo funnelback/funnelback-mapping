@@ -7,4 +7,4 @@ Goals
 - Provide the ability to use custom pins, info boxes and pin clustering.
 - Provide a GeoJSON endpoint that can be accessed by other services
 
-See usage instructions at: https://gitlab.squiz.net/funnelback-custom-components/funnelback-mapping/wikis/home
+See usage instructions at: [https://gitlab.squiz.net/funnelback-custom-components/funnelback-mapping/wikis/home](https://gitlab.squiz.net/funnelback-custom-components/funnelback-mapping/wikis/home)
