@@ -7,4 +7,4 @@ Goals
 - Provide the ability to use custom pins, info boxes and pin clustering.
 - Provide a GeoJSON endpoint that can be accessed by other services
 
-See usage instructions at: https://confluence.cbr.au.funnelback.com/display/KB/Using+Funnelback+search+results+to+populate+a+map
+See usage instructions at: https://gitlab.squiz.net/funnelback-custom-components/funnelback-mapping/wikis/home
