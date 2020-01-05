@@ -3,6 +3,7 @@
 Purpose: add GeoJSON map data to a LeafletJS map
 Author: Peter Levan, 2014
 
+Updated: Nov 2017 - Add support for an origin marker
 Updated: 11 Feb 2015 - add support for custom pins and addition of the customiseMap() function.
 Updated: 24 Feb 2015 - add option to enable/disable pin clustering.
 Updated: 25 Feb 2015 - add loading icons.
@@ -101,10 +102,16 @@ function addPoints(data) {
 		map.addLayer(markers);
 		map.fitBounds(markers.getBounds());
 		}
+	        if(typeof(fborigin) !== 'undefined'){		
+		    markers = L.marker(origin,{icon: originMarker,alt: "You are here"}).addTo(map)
+		    map.setView(origin,12);
+		}
     }
 	else {
 		// Display the no results text
 		jQuery("#mapResults").append("<div id=\"mapnoresults\"><p><span>"+noResultsText+"</span></p></div>")
 	}
+	// redraw the map
+	map.fitBounds(map.getBounds());
 }
                                                                                                           
