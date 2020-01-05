@@ -4,7 +4,7 @@ variables:
     # SSH config to use our deploy key to push to GitHub
     GITHUB_SSH_CONFIG: |
         Host github.com
-            User git
+            User funnelback-gitlab
             IdentityFile ~/.ssh/github_deploy_key
 stages:
     - sync_github
@@ -25,7 +25,7 @@ sync_github:
         # branches (master, release branches) so that we don't push every
         # single feature / dev branch to GitHub
         - test ! -z "${GITHUB_DEPLOY_KEY}" || exit 0
-        - git remote add github git@github.com:funnelback/funnelback-mapping.git || true
+        - git remote add github funnelback-gitlab@github.com:funnelback/funnelback-mapping.git || true
         - mkdir -p ~/.ssh
         - echo "${GITHUB_DEPLOY_KEY}" > ~/.ssh/github_deploy_key
         - echo "${GITHUB_HOST_KEY}" >> ~/.ssh/known_hosts
@@ -34,3 +34,5 @@ sync_github:
         # Checkout required as we are in detached HEAD state
         - git checkout ${CI_COMMIT_REF_NAME}
         - git push github ${CI_COMMIT_REF_NAME}
+    tags:
+        - docker
