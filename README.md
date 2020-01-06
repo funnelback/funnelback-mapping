@@ -5,6 +5,7 @@ This code implements map visualisation code for geospatial enabled Funnelback re
 It allows for easy deployment of results onto a map.
 
 Provides: 
+
 * a standardised way to integrating Funnelback search results with popular mapping services with minimal customisation.
 * a default set of Freemarker macros to handle map presentation.
 * flexibility in the choice of mapping service (eg. Google Maps vs. OpenStreetMap vs. Bing Maps) with minimal changes to code
@@ -30,4 +31,5 @@ The following third party code is used for this implementation:
 * [Font Awesome 4.7.0](https://fontawesome.com/v4.7.0/)
 
 # Example implementation
+
 * [International airport locations demo](http://showcase.funnelback.com/s/search.html?collection=showcase-mapping)
