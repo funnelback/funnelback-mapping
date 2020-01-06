@@ -48,7 +48,7 @@ This demo provides an iteractive map based on a dataset of global airport locati
 ## Implementation steps
 
 1. Create a Funnelback collection. The Funnelback index must include geo-coded items in the index (note: the metadata doesn't need to be treated as geospatial type 2 metadata by Funnelback, unless you wish to do geospatial search (search specifying an origin and maxdist). This implementation assumes the geospatial data is stored within the latlong metadata class.
-2. Add a `collection.cfg` setting to tell the mapping service what field is used for the geospatial metadata. Eg. if you have the geospatial metadata held in a the latlong class:
+2. Add a `collection.cfg` setting to tell the mapping service what field is used for the geospatial metadata. e.g. if you have the geospatial metadata held in a the latlong class:
 	```
 	map.geospatialClass=latlong
 	```
@@ -58,16 +58,16 @@ This demo provides an iteractive map based on a dataset of global airport locati
 	ui.modern.form.geojson.content_type=application/javascript
 	```
 5. Add the following to your result template.
-	a. To the very top of the file (below the funnelback.ftl import)
+	1. To the very top of the file (below the funnelback.ftl import)
 		```html
 		<#import "/conf/<COLLECTION_NAME>/funnelback_mapping.ftl" as map/>
 		```
-	b. After the jquery, completion and angular JS script tags: 
+	2. After the jquery, completion and angular JS script tags: 
 		```html
 		<#-- MAPS STUFF -->
 		<@map.MapResources/>
 		```
-	c. Add a mapResults div as a container for the map.  eg. before the best bets div add: 
+	3. Add a mapResults div as a container for the map.  eg. before the best bets div add: 
 		```html
 		<div id="mapResults"></div>
 		```
@@ -222,9 +222,9 @@ function customiseMap() {
 }
 ```
 
-Notes
+## Notes
 
-It is very important to optimise the query to avoid problems with memory usage in Jetty and response times. The following settings are applied by default (in the mapservice/padre_opts.cfg) but can be adjusted as required.
+It is very important to optimise the query to avoid problems with memory usage in Jetty and response times. The following settings are applied by default (in the `mapservice/padre_opts.cfg`) but can be adjusted as required.
 
 The idea here is to make the Padre XML and modern UI data model as small as possible.
 
